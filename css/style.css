@@ -247,6 +247,8 @@ body { font-size: var(--text-md); font-stretch: 100%; }
 .footer__cols div { display: grid; gap: var(--space-xs); align-content: start; }
 .footer__h { font-family: var(--font-body); font-style: normal; font-size: var(--text-sm); font-weight: 600; color: var(--color-on-ink-muted); margin-bottom: var(--space-xs); }
 .footer a { text-decoration: none; font-weight: 500; width: fit-content; }
+.footer .footer__social { display: inline-flex; align-items: center; gap: var(--space-xs); padding: 0.7em 1.1em; background: var(--color-accent); color: var(--color-on-ink); font-size: var(--text-base, 1rem); font-weight: 700; border-radius: 4px; }
+.footer .footer__social:hover { text-decoration: none; filter: brightness(1.1); }
 .footer a:hover { text-decoration: underline; text-decoration-color: var(--color-accent); text-decoration-thickness: 2px; }
 .footer a:focus-visible { outline: 2px solid var(--color-on-ink); outline-offset: 3px; }
 .footer__base { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-md); padding-block: var(--space-2xl) var(--space-xl); font-size: var(--text-sm); color: var(--color-on-ink-muted); }
