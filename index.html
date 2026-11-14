@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Redline Syndicate | STEM Racing team</title>
+  <meta name="description" content="Redline Syndicate is a student STEM Racing team designing, engineering and racing a CO2-powered car over 20 metres.">
+  <meta name="theme-color" content="#DE323C">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Redline Syndicate | STEM Racing team">
+  <meta property="og:description" content="Twenty metres. No second chances. Follow the build and partner with the team.">
+  <meta property="og:image" content="assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preload" href="fonts/saira-latin-standard-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/saira-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.replace('no-js', 'js');</script>
+  <script type="importmap">
+    { "imports": { "three": "./vendor/three.module.min.js", "three/addons/": "./vendor/addons/" } }
+  </script>
+</head>
+<body>
+<!--
+THESIS: A race team's livery sheet, not a school project page. The site is a vinyl decal sheet in the logo's red, ink and paper; the car is the hero and its livery goes on in front of you. Refuses the category default of a black page with a glowing red render.
+OWN-WORLD: Paper backing sheet with crop marks; die-cut decals with white keylines and soft lift shadows; full-bleed red and ink fields applied with a diagonal squeegee wipe; Saira expanded italic for display, Saira for text, JetBrains Mono only for measurements and part codes.
+STORY: Visitors see a serious team and its car in one second, understand the 20 m CO2 sprint, try the start lights themselves, meet the roles, and leave as followers or partners.
+FIRST VIEWPORT: Huge outlined REDLINE behind a live 3D car taking its livery; headline, one sentence and two sticker buttons bottom-left; nav with mark and a Partner action.
+FORM: livery and decal sheet, position 3 of 7, seed key 08c9bbde.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+-->
+  <a class="skip" href="#main">Skip to content</a>
+
+  <div class="loader" aria-hidden="true">
+    <div class="loader__gantry">
+      <span class="loader__light"></span><span class="loader__light"></span><span class="loader__light"></span><span class="loader__light"></span><span class="loader__light"></span>
+    </div>
+    <p class="loader__count"><span class="loader__num">0</span><span class="loader__unit">%</span></p>
+  </div>
+
+  <header class="nav" data-nav>
+    <div class="nav__inner container">
+      <a class="nav__brand" href="#top" aria-label="Redline Syndicate, back to top">
+        <img src="assets/logo-mark-sticker.svg" alt="" width="88" height="44">
+        <span class="nav__name">Redline Syndicate</span>
+      </a>
+      <nav class="nav__links" aria-label="Main">
+        <a href="#machine">The car</a>
+        <a href="#race">The race</a>
+        <a href="#crew">Crew</a>
+        <a href="#season">Season</a>
+      </nav>
+      <a class="btn btn--small" href="#partner">Partner with us</a>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu">
+        <span class="visually-hidden">Menu</span>
+        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="menu" id="menu" hidden>
+      <a href="#machine">The car</a>
+      <a href="#race">The race</a>
+      <a href="#crew">Crew</a>
+      <a href="#season">Season</a>
+      <a href="#partner">Partner with us</a>
+    </div>
+  </header>
+
+  <canvas class="stage" aria-hidden="true"></canvas>
+
+  <main id="main">
+    <!-- 1. HERO -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="crop crop--tl" aria-hidden="true"></div><div class="crop crop--tr" aria-hidden="true"></div>
+      <p class="hero__word" aria-hidden="true"><span>REDLINE</span></p>
+      <img class="hero__fallback" src="assets/car-hero.webp" alt="The Redline Syndicate car: a slim red and white CO2-powered racer with black wings" width="1600" height="900">
+      <div class="hero__copy container">
+        <h1 id="hero-title" class="hero__title"><span class="line"><span>Twenty metres.</span></span><span class="line"><span>No second chances.</span></span></h1>
+        <p class="hero__lead">We are a student STEM Racing team engineering one very fast car.</p>
+        <div class="hero__actions">
+          <a class="btn" href="#partner">Partner with us</a>
+          <a class="btn btn--ghost" href="https://www.instagram.com/redlinesyndicate/" rel="noopener" target="_blank">Follow the build</a>
+        </div>
+      </div>
+      <a class="hero__cue" href="#manifesto"><span class="visually-hidden">Scroll to the next section</span><svg viewBox="0 0 24 40" width="18" height="30" aria-hidden="true"><rect x="1" y="1" width="22" height="38" rx="11" fill="none" stroke="currentColor" stroke-width="2"/><rect class="hero__cue-dot" x="10" y="8" width="4" height="8" rx="2" fill="currentColor"/></svg></a>
+    </section>
+
+    <!-- 2. MANIFESTO -->
+    <section class="manifesto field field--red" id="manifesto" aria-labelledby="manifesto-title">
+      <div class="container manifesto__grid">
+        <h2 id="manifesto-title" class="manifesto__title" data-words>Built by students. Engineered like a works team.</h2>
+        <div class="manifesto__side">
+          <p class="manifesto__body">We design in CAD, test the airflow in CFD, machine our own parts and race against the clock. Every decision has to earn its grams.</p>
+          <img class="manifesto__sticker" src="assets/logo-mark-sticker.svg" alt="" width="360" height="180" loading="lazy">
+        </div>
+      </div>
+      <div class="tape" aria-hidden="true"><div class="tape__track"><span>Redline Syndicate</span><i></i><span>STEM Racing</span><i></i><span>Redline Syndicate</span><i></i><span>STEM Racing</span><i></i><span>Redline Syndicate</span><i></i><span>STEM Racing</span><i></i><span>Redline Syndicate</span><i></i><span>STEM Racing</span><i></i></div></div>
+    </section>
+
+    <!-- 3. THE MACHINE -->
+    <section class="machine" id="machine" aria-labelledby="machine-title">
+      <div class="machine__pin">
+        <div class="container machine__grid">
+          <div class="machine__head">
+            <h2 id="machine-title" class="section-title">Exploded, then explained.</h2>
+            <p class="machine__lead">Six assemblies. All ours, except the regulation CO2 cartridge.</p>
+          </div>
+          <div class="machine__slot">
+            <img class="machine__fallback" src="assets/car-exploded.webp" alt="Exploded view of the car showing body, wings, wheels, axles, cartridge and tether guides" width="1600" height="1000" loading="lazy">
+          </div>
+          <ol class="parts">
+            <li class="part" data-part="body"><span class="part__code">RS-01</span><h3>Body</h3><p>Machined from a single block and shaped to cut drag.</p></li>
+            <li class="part" data-part="frontWing"><span class="part__code">RS-02</span><h3>Front wing</h3><p>Trims the airflow before it reaches the front wheels.</p></li>
+            <li class="part" data-part="rearWing"><span class="part__code">RS-03</span><h3>Rear wing</h3><p>Keeps the tail settled through the launch.</p></li>
+            <li class="part" data-part="wheel"><span class="part__code">RS-04</span><h3>Wheels and axles</h3><p>Light, true and low friction. Every gram is mass we have to launch.</p></li>
+            <li class="part" data-part="cartridge"><span class="part__code">RS-05</span><h3>CO2 cartridge</h3><p>One pierced cartridge is all the power the car gets.</p></li>
+            <li class="part" data-part="guides"><span class="part__code">RS-06</span><h3>Tether guides</h3><p>Hold the car to its line for the full twenty metres.</p></li>
+          </ol>
+        </div>
+        <div class="callouts" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- 4. THE RACE -->
+    <section class="race field field--ink" id="race" aria-labelledby="race-title">
+      <div class="container race__grid">
+        <div class="race__copy">
+          <h2 id="race-title" class="section-title">Lights out. Then it is already over.</h2>
+          <p>A STEM Racing car covers 20 metres in about a second, and a jump start counts against us. Try the lights.</p>
+        </div>
+        <div class="race__rig">
+          <div class="gantry" role="img" aria-label="Five start lights">
+            <span class="gantry__light"></span><span class="gantry__light"></span><span class="gantry__light"></span><span class="gantry__light"></span><span class="gantry__light"></span>
+          </div>
+          <button class="btn btn--launch" type="button" data-launch>Start the lights</button>
+          <p class="race__status" role="status" aria-live="polite">Press the button or the space bar, then react when all five lights go out.</p>
+          <div class="track" aria-hidden="true">
+            <div class="track__line"><span class="track__car"></span></div>
+            <ol class="track__ticks"><li>0 m</li><li>5</li><li>10</li><li>15</li><li>20 m</li></ol>
+          </div>
+          <dl class="race__readout">
+            <div><dt>Your reaction</dt><dd data-time>-.--- s</dd></div>
+            <div><dt>Your best</dt><dd data-best>-.--- s</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. THE CREW  (EDIT: replace each data-name with the team member's name) -->
+    <section class="crew" id="crew" aria-labelledby="crew-title">
+      <div class="crop crop--tl" aria-hidden="true"></div><div class="crop crop--tr" aria-hidden="true"></div>
+      <div class="container">
+        <h2 id="crew-title" class="section-title">Six roles. No passengers.</h2>
+        <ul class="crew__grid">
+          <li class="decal decal--red"><h3>Team principal</h3><p>Runs the programme, the plan and the deadlines.</p><p class="decal__name" data-name="">Name to add</p></li>
+          <li class="decal decal--ink"><h3>Design engineer</h3><p>Owns the CAD model and the CFD runs.</p><p class="decal__name" data-name="">Name to add</p></li>
+          <li class="decal decal--paper"><h3>Manufacturing engineer</h3><p>Turns the model into machined, finished parts.</p><p class="decal__name" data-name="">Name to add</p></li>
+          <li class="decal decal--ink"><h3>Graphic designer</h3><p>Livery, pit display and everything you see here.</p><p class="decal__name" data-name="">Name to add</p></li>
+          <li class="decal decal--paper"><h3>Enterprise manager</h3><p>Sponsors, budget and the business case.</p><p class="decal__name" data-name="">Name to add</p></li>
+          <li class="decal decal--red"><h3>Resource manager</h3><p>Parts, tools, logistics and race-day kit.</p><p class="decal__name" data-name="">Name to add</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 6. SEASON (EDIT: add dates as you confirm them) -->
+    <section class="season" id="season" aria-labelledby="season-title">
+      <div class="container">
+        <h2 id="season-title" class="section-title">The season, one sheet.</h2>
+        <div class="season__rail" aria-hidden="true"><span class="season__fill"></span></div>
+        <ol class="season__steps">
+          <li><h3>Concept</h3><p>Read the regulations, set the targets, sketch the car.</p></li>
+          <li><h3>CAD and CFD</h3><p>Model every part, then test the airflow virtually.</p></li>
+          <li><h3>Manufacture</h3><p>Machine the body, print the wings, finish and paint.</p></li>
+          <li><h3>Test and tune</h3><p>Weigh, align and run until the numbers stop moving.</p></li>
+          <li><h3>Regional final</h3><p>Race, present, defend the portfolio.</p></li>
+          <li><h3>National final</h3><p>The goal we are building towards.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 7. PARTNERS -->
+    <section class="partner field field--red" id="partner" aria-labelledby="partner-title">
+      <div class="container partner__grid">
+        <div class="partner__copy">
+          <h2 id="partner-title" class="section-title">Put your name on our car.</h2>
+          <p>Partners pay for materials, machining and travel, and get seen on the car, the pit display and our channels.</p>
+          <div class="partner__actions">
+            <a class="btn btn--ink" href="https://ig.me/m/redlinesyndicate" rel="noopener" target="_blank">Message us on Instagram</a>
+          </div>
+        </div>
+        <figure class="slots">
+          <div class="slots__plate"><div class="slots__stage">
+            <img class="slots__car" src="assets/car-side.webp" alt="Side view of the Redline Syndicate car" width="1477" height="387" loading="lazy">
+            <span class="slot slot--title">Title partner</span>
+            <span class="slot slot--nose">Nose</span>
+            <span class="slot slot--wing">Wing partner</span>
+            <span class="slot slot--wheel">Wheels</span>
+          </div></div>
+          <figcaption>Open slots on the body, nose, wing and wheels.</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer field field--ink">
+    <div class="container footer__grid">
+      <img class="footer__logo" src="assets/logo-full-on-dark.svg" alt="Redline Syndicate" width="640" height="440" loading="lazy">
+      <div class="footer__cols">
+        <div>
+          <h2 class="footer__h">Follow</h2>
+          <a href="https://www.instagram.com/redlinesyndicate/" rel="noopener" target="_blank">Instagram @redlinesyndicate</a>
+        </div>
+        <div>
+          <h2 class="footer__h">On this sheet</h2>
+          <a href="#machine">The car</a><a href="#race">The race</a><a href="#crew">Crew</a><a href="#season">Season</a><a href="#partner">Partner</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer__base">
+      <p>Redline Syndicate is an independent student team competing in STEM Racing. This is not an official STEM Racing website.</p>
+      <a href="#top">Back to the start line</a>
+    </div>
+    <div class="chequer" aria-hidden="true"></div>
+  </footer>
+
+  <script src="vendor/gsap.min.js" defer></script>
+  <script src="vendor/ScrollTrigger.min.js" defer></script>
+  <script src="vendor/lenis.min.js" defer></script>
+  <script type="module" src="js/main.js" onerror="document.querySelector('.loader')?.remove()"></script>
+</body>
+</html>
